@@ -16,7 +16,7 @@ jobs:
       env: PLATFORMIO_PROJECT_DIR=examples/zephyr-blink
     - python: "2.7"
       env: PLATFORMIO_PROJECT_DIR=examples/zephyr-cpp-synchronization
-  
+
 install:
   - pip install -U https://github.com/platformio/platformio/archive/develop.zip
   - platformio platform install file://.
@@ -29,6 +29,6 @@ notifications:
 
   slack:
     rooms:
-      secure: VwbEloRRhOM7q07DhjeoTqM+6vYwaRae1RwlyYOmWWTDXA7epK5Q9vGLm3WYrp/uefp10APCz/lzoXdrj4WGY6xfMdi387uJopoIqBJKiOwGFXVHjqwV6lQ6yenWgvQa+EiWeZ2lkk6pWg9kcsnGL++b4jEA29l042DkpV/5FKlcU+N0xbkvyjIA7djLGFc0SYHbj44oUC2O2x6E/iO3Of+Ldyj47BU8B/Fk6yWH5jXhXxDpHOGljLtEkP1FHQg0Tmb04wHzkhIKRqxjJ/M16KFdc2+VySG17byWEv07jW8tSHMIe7mkJunLsleNgC0H1zuu0F1AouHcoh4d0855RFpAbzWMqesytmnbLq/Q1QS5fOJAB2ooeVtUFK52Ka5kehZJOXiJeSklU1G8YNju2qU+rHrxc3wLQ9n29v1h2vE4lDqFAIX+Ow7b/EhXlNlEi3pdE+GT0Z1ar/LhfzS4WYw4NOQ9OeJE8uTUdJF9d9O/0pX8mBKZRwC8IfRq68eHRwcdvKyqqMSkc/k5H1C+GKaN0iBbDXN9irzFyjpF97KsbVAYXx/oZI5yBAndaHBFKQumyuZ9Wreh1pcDfuPjDtTnacBXMmVLza5DCTskf0zJobVXxD3DmrGk81qz7HuBsGzV9Hl+MLe+vxBKTSlMzZcAKVq3Gl1jTeYfqyIecSk=
+      secure: njzMf+A7GH8qll87xvYxc7dtYfAz2V+LB/TloRBeTlqzCafb+pzFbSNQddsMhgBGPvYCn1BwOGArbCigB8vK8tAld9j9/mT4rnQN13hh7nCINsUi/NI1SmRB9WBJ8AuFHhvd3VZXwBQh1ok13O0roL/tbfn88FZOhYLF0zOywDmzfDXCUBnYZxNZ5uklNJR171i8XRRE+elE/FFByrPRPTqhfMjzp1EirLu5zRjHrEzmeWFUzvK60hSlW+GRWpWLYVsHXtH6egH3pYZH3ipq3WYbda3PCFFL08p1I339rHRBk3GK6xn4dA4BEZ9gLKHHPufXVZtJWqIhzdGlQeqjcNRlclgmDAGuL+5LUEseOwzOz6f2om0k+WtRJGGy5brgdsrszX6ix037OYXTIN57wbslEkPLJAEndXSFrmE8AIoMLlmZBVsC/xVW48+BQXD3R6mUSSDcaAI+m32b2K/LLjyC2toh+5bJjSTucXP208SwngoTolefzvT7VAKhafw68pv0Kqf/W3ez4dBxSfNSVBoLikqfdqEkK4SCsQqBoUkZxRegpc8bGAxayrbGUvRwo8XZ+7jof7hRpbz9n8U/LrLGLKPOrnJ7+hd2C94dSuQUw7naFRObmLKOC5q2I3sQZYg7A7/7qU1DxhSsXpIQjJp26liAx6jsg0lEVRwQ4gE=
     on_failure: always
     on_success: change

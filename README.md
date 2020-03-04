@@ -1,6 +1,6 @@
-# NXP i.MX RT: development platform for [PlatformIO](http://platformio.org)
+# NXP i.MX RT: development platform for [PlatformIO](https://platformio.org)
 [![Build Status](https://travis-ci.org/platformio/platform-nxpimxrt.svg?branch=develop)](https://travis-ci.org/platformio/platform-nxpimxrt)
-[![Build status](https://ci.appveyor.com/api/projects/status/gm98eo04per1je25/branch/develop?svg=true)](https://ci.appveyor.com/project/ivankravets/platform-nxpimxrt/branch/develop)
+[![Build status](https://ci.appveyor.com/api/projects/status/c1ulif3vke3uo3rm/branch/develop?svg=true)](https://ci.appveyor.com/project/ivankravets/platform-nxpimxrt/branch/develop)
 
 The i.MX RT series of crossover processors features the Arm Cortex-M core, real-time functionality and MCU usability at a cost-effective price. Combining high performance with real-time functionality, the i.MX RT series of crossover processors are designed to support next-generation IoT applications with a high level of integration and security balanced with MCU-level usability.
 
