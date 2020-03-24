@@ -15,7 +15,7 @@ jobs:
     - python: "2.7"
       env: PLATFORMIO_PROJECT_DIR=examples/zephyr-blink
     - python: "2.7"
-      env: PLATFORMIO_PROJECT_DIR=examples/zephyr-cpp-synchronization
+      env: PLATFORMIO_PROJECT_DIR=examples/zephyr-synchronization
 
 install:
   - pip install -U https://github.com/platformio/platformio/archive/develop.zip
