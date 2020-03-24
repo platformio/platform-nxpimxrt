@@ -4,6 +4,7 @@ environment:
   matrix:
     - PLATFORMIO_PROJECT_DIR: "examples/mbed-blink"
     - PLATFORMIO_PROJECT_DIR: "examples/mbed-rtos-ethernet"
+    - PLATFORMIO_PROJECT_DIR: "examples/sdkexpresso-basic"
     - PLATFORMIO_PROJECT_DIR: "examples/zephyr-blink"
     - PLATFORMIO_PROJECT_DIR: "examples/zephyr-synchronization"
 

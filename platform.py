@@ -32,7 +32,10 @@ class NxpimxrtPlatform(PlatformBase):
             if upload_protocol == "cmsis-dap":
                 self.packages['tool-pyocd']['type'] = "uploader"
                 
-        if "zephyr" in variables.get("pioframework", []):
+        if not variables.get("pioframework", []):
+            # Temporary for MCUXpresso SDK
+            self.packages['toolchain-gccarmnoneeabi']['version'] = "~1.80301.0"  
+        elif "zephyr" in variables.get("pioframework", []):
             for p in self.packages:
                 if p.startswith("framework-zephyr-") or p in (
                     "tool-cmake", "tool-dtc", "tool-ninja"):
