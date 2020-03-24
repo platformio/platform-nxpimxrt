@@ -1,10 +1,7 @@
 import os
 
 from SCons.Script import (
-    ARGUMENTS,
-    ,
-    AlwaysBuild,
-    DefaultEnvironment,
+   COMMAND_LINE_TARGETS
 )
 
 Import("env")
@@ -71,7 +68,6 @@ sdk_includes = (
     os.path.join("component", "serial_manager"),
     os.path.join("component", "lists"),
     os.path.join("component", "uart")
-
 )
 
 env.Append(
