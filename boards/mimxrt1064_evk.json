@@ -1,0 +1,29 @@
+{
+  "build": {
+    "cpu": "cortex-m7",
+    "f_cpu": "600000000L",
+    "mcu": "mimxrt1064dvl6a"
+  },
+  "debug": {
+    "jlink_device": "MIMXRT1064DVL6A",
+    "onboard_tools": [
+      "jlink"
+    ]
+  },
+  "frameworks": [
+    "zephyr"
+  ],
+  "name": "NXP i.MX RT1064 Evaluation Kit",
+  "upload": {
+    "maximum_ram_size": 1048576,
+    "maximum_size": 4194304,
+    "protocol": "mbed",
+    "protocols": [
+      "jlink",
+      "blackmagic",
+      "mbed"
+    ]
+  },
+  "url": "https://www.nxp.com/design/development-boards/i.mx-evaluation-and-development-boards/mimxrt1064-evk-i.mx-rt1064-evaluation-kit:MIMXRT1064-EVK",
+  "vendor": "NXP"
+}
