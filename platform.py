@@ -31,15 +31,17 @@ class NxpimxrtPlatform(PlatformBase):
                                                     "upload.protocol", ""))
             if upload_protocol == "cmsis-dap":
                 self.packages['tool-pyocd']['type'] = "uploader"
-                
-        if "zephyr" in variables.get("pioframework", []):
+
+        frameworks = variables.get("pioframework", [])
+        if "mbed" in frameworks:
+            self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.90201.0"
+        if "zephyr" in frameworks:
             for p in self.packages:
                 if p.startswith("framework-zephyr-") or p in (
                     "tool-cmake", "tool-dtc", "tool-ninja"):
                     self.packages[p]["optional"] = False
-            self.packages['toolchain-gccarmnoneeabi']['version'] = "~1.80201.0"
             if "windows" not in get_systype():
-                self.packages['tool-gperf']['optional'] = False
+                self.packages["tool-gperf"]["optional"] = False
 
         # configure J-LINK tool
         jlink_conds = [

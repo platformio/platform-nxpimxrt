@@ -1,4 +1,4 @@
-..  Copyright 2020-present PlatformIO <contact@platformio.org>
+..  Copyright 2014-present PlatformIO <contact@platformio.org>
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
@@ -20,7 +20,7 @@ How to build PlatformIO based project
 .. code-block:: bash
 
     # Change directory to example
-    > cd platform-nxpimxrt/examples/mbed-blink
+    > cd platform-nxpimxrt/examples/mbed-rtos-ethernet-tls
 
     # Build project
     > platformio run
