@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/platformio/platform-nxpimxrt.git"
   },
-  "version": "1.1.1",
+  "version": "1.2.0",
   "packageRepositories": [
     "https://dl.bintray.com/platformio/dl-packages/manifest.json",
     "http://dl.platformio.org/packages/manifest.json"
@@ -34,7 +34,7 @@
     "framework-mbed": {
       "type": "framework",
       "optional": true,
-      "version": "~6.51401.200113"
+      "version": "~6.60200.0"
     },
     "framework-zephyr": {
       "type": "framework",
