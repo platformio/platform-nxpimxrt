@@ -4,6 +4,13 @@
   "description": "The i.MX RT series of crossover processors features the Arm Cortex-M core, real-time functionality and MCU usability at a cost-effective price.",
   "homepage": "https://www.nxp.com/products/processors-and-microcontrollers/arm-microcontrollers/i.mx-rt-crossover-mcus:IMX-RT-SERIES",
   "license": "Apache-2.0",
+  "keywords": [
+      "dev-platform",
+      "ARM",
+      "Cortex-M",
+      "NXP Semiconductors",
+      "i.MX RT"
+  ],
   "engines": {
     "platformio": "<5"
   },
