@@ -4,18 +4,21 @@
   "description": "The i.MX RT series of crossover processors features the Arm Cortex-M core, real-time functionality and MCU usability at a cost-effective price.",
   "homepage": "https://www.nxp.com/products/processors-and-microcontrollers/arm-microcontrollers/i.mx-rt-crossover-mcus:IMX-RT-SERIES",
   "license": "Apache-2.0",
+  "keywords": [
+      "dev-platform",
+      "ARM",
+      "Cortex-M",
+      "NXP Semiconductors",
+      "i.MX RT"
+  ],
   "engines": {
-    "platformio": "<5"
+    "platformio": "^5"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/platformio/platform-nxpimxrt.git"
   },
-  "version": "1.2.0",
-  "packageRepositories": [
-    "https://dl.bintray.com/platformio/dl-packages/manifest.json",
-    "http://dl.platformio.org/packages/manifest.json"
-  ],
+  "version": "1.2.1",
   "frameworks": {
     "mbed": {
       "package": "framework-mbed",
@@ -29,123 +32,152 @@
   "packages": {
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
+      "owner": "platformio",
       "version": ">=1.60301.0,<1.80000.0"
     },
     "framework-mbed": {
       "type": "framework",
       "optional": true,
+      "owner": "platformio",
       "version": "~6.60200.0"
     },
     "framework-zephyr": {
       "type": "framework",
       "optional": true,
+      "owner": "platformio",
       "version": "~2.20300.0"
     },
     "framework-zephyr-canopennode": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.5c6b0566d5"
     },
     "framework-zephyr-civetweb": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.99129c5efc"
     },
     "framework-zephyr-cmsis": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.542b2296e6"
     },
     "framework-zephyr-fatfs": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.9ee6b9b951"
     },
     "framework-zephyr-hal-nxp": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.80a337dc4c"
     },
     "framework-zephyr-libmetal": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.3c3c9ec83b"
     },
     "framework-zephyr-lvgl": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.74fc2e753a"
     },
     "framework-zephyr-mbedtls": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.4bf099f125"
     },
     "framework-zephyr-mcuboot": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.e88113bbeb"
     },
     "framework-zephyr-mcumgr": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.5885efb7ca"
     },
     "framework-zephyr-open-amp": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.724f7e2a45"
     },
     "framework-zephyr-loramac-node": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.29e516ec58"
     },
     "framework-zephyr-openthread": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.a83d18cf18"
     },
     "framework-zephyr-segger": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.6fcf61606d"
     },
     "framework-zephyr-tinycbor": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.40daca97b4"
     },
     "framework-zephyr-tinycrypt": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.3e9a49d267"
     },
     "framework-zephyr-littlefs": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.0aefdda69d"
     },
     "framework-zephyr-mipi-sys-t": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.957d46bc3c"
     },
     "framework-zephyr-trusted-firmware-m": {
       "optional": true,
+      "owner": "platformio",
       "version": "0.0.0-alpha+sha.7de2daa196"
     },
     "tool-openocd": {
       "type": "debugger",
       "optional": true,
+      "owner": "platformio",
       "version": "~2.1000.0"
     },
     "tool-pyocd": {
       "type": "debugger",
       "optional": true,
+      "owner": "platformio",
       "version": "~0.801.0"
     },
     "tool-jlink": {
       "type": "uploader",
       "optional": true,
+      "owner": "platformio",
       "version": "^1.63208.0"
     },
     "tool-cmake": {
       "optional": true,
+      "owner": "platformio",
       "version": "~3.16.0"
     },
     "tool-dtc": {
       "optional": true,
+      "owner": "platformio",
       "version": "~1.4.7"
     },
     "tool-ninja": {
       "optional": true,
+      "owner": "platformio",
       "version": "^1.7.0"
     },
     "tool-gperf": {
       "optional": true,
+      "owner": "platformio",
       "version": "^3.0.0"
     }
   }
