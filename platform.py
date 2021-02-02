@@ -12,7 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from platform import system
+import copy
+import platform
 
 from platformio.managers.platform import PlatformBase
 from platformio.util import get_systype
@@ -77,15 +78,15 @@ class NxpimxrtPlatform(PlatformBase):
         upload_protocols = board.manifest.get("upload", {}).get(
             "protocols", [])
         if "tools" not in debug:
-            debug['tools'] = {}
+            debug["tools"] = {}
 
         # J-Link / BlackMagic Probe
         for link in ("blackmagic", "cmsis-dap", "jlink"):
-            if link not in upload_protocols or link in debug['tools']:
+            if link not in upload_protocols or link in debug["tools"]:
                 continue
 
             if link == "blackmagic":
-                debug['tools']['blackmagic'] = {
+                debug["tools"]["blackmagic"] = {
                     "hwids": [["0x1d50", "0x6018"]],
                     "require_debug_port": True
                 }
@@ -94,7 +95,7 @@ class NxpimxrtPlatform(PlatformBase):
                 if debug.get("pyocd_target"):
                     pyocd_target = debug.get("pyocd_target")
                     assert pyocd_target
-                    debug['tools'][link] = {
+                    debug["tools"][link] = {
                         "onboard": True,
                         "server": {
                             "package": "tool-pyocd",
@@ -110,7 +111,7 @@ class NxpimxrtPlatform(PlatformBase):
                 else:
                     openocd_target = debug.get("openocd_target")
                     assert openocd_target
-                    debug['tools'][link] = {
+                    debug["tools"][link] = {
                         "load_cmd": "preload",
                         "onboard": True,
                         "server": {
@@ -127,7 +128,7 @@ class NxpimxrtPlatform(PlatformBase):
             elif link == "jlink":
                 assert debug.get("jlink_device"), (
                     "Missed J-Link Device ID for %s" % board.id)
-                debug['tools'][link] = {
+                debug["tools"][link] = {
                     "server": {
                         "package": "tool-jlink",
                         "arguments": [
@@ -138,11 +139,27 @@ class NxpimxrtPlatform(PlatformBase):
                             "-port", "2331"
                         ],
                         "executable": ("JLinkGDBServerCL.exe"
-                                       if system() == "Windows" else
+                                       if platform.system() == "Windows" else
                                        "JLinkGDBServer")
                     },
                     "onboard": link in debug.get("onboard_tools", [])
                 }
 
-        board.manifest['debug'] = debug
+        board.manifest["debug"] = debug
         return board
+
+    def configure_debug_options(self, initial_debug_options, ide_data):
+        debug_options = copy.deepcopy(initial_debug_options)
+        server_executable = debug_options["server"]["executable"].lower()
+        adapter_speed = initial_debug_options.get("speed")
+        if adapter_speed:
+            if "openocd" in server_executable:
+                debug_options["server"]["arguments"].extend(
+                    ["-c", "adapter speed %s" % adapter_speed]
+                )
+            elif "jlink" in server_executable:
+                debug_options["server"]["arguments"].extend(
+                    ["-speed", adapter_speed]
+                )
+
+        return debug_options
