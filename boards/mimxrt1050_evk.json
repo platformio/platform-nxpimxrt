@@ -16,8 +16,8 @@
   ],
   "name": "NXP i.MX RT1050 Evaluation Kit",
   "upload": {
-    "maximum_ram_size": 524288,
-    "maximum_size": 67108864,
+    "maximum_ram_size": 33554432,
+    "maximum_size": 8388608,
     "protocol": "mbed",
     "protocols": [
       "jlink",
