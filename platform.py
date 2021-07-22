@@ -38,8 +38,7 @@ class NxpimxrtPlatform(PlatformBase):
             self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.90201.0"
         if "zephyr" in frameworks:
             for p in self.packages:
-                if p.startswith("framework-zephyr-") or p in (
-                    "tool-cmake", "tool-dtc", "tool-ninja"):
+                if p in ("tool-cmake", "tool-dtc", "tool-ninja"):
                     self.packages[p]["optional"] = False
             if "windows" not in get_systype():
                 self.packages["tool-gperf"]["optional"] = False
