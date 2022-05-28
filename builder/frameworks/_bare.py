@@ -1,4 +1,4 @@
-# Copyright 2020-present PlatformIO <contact@platformio.org>
+# Copyright 2014-present PlatformIO <contact@platformio.org>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,7 +21,12 @@ from SCons.Script import DefaultEnvironment
 env = DefaultEnvironment()
 
 env.Append(
-    ASFLAGS=["-x", "assembler-with-cpp"],
+    ASFLAGS=[
+        "-mthumb",
+    ],
+    ASPPFLAGS=[
+        "-x", "assembler-with-cpp",
+    ],
 
     CCFLAGS=[
         "-Os",  # optimize for size
@@ -54,6 +59,9 @@ env.Append(
 
 if "BOARD" in env:
     env.Append(
+        ASFLAGS=[
+            "-mcpu=%s" % env.BoardConfig().get("build.cpu")
+        ],
         CCFLAGS=[
             "-mcpu=%s" % env.BoardConfig().get("build.cpu")
         ],
@@ -61,6 +69,3 @@ if "BOARD" in env:
             "-mcpu=%s" % env.BoardConfig().get("build.cpu")
         ]
     )
-
-# copy CCFLAGS to ASFLAGS (-x assembler-with-cpp mode)
-env.Append(ASFLAGS=env.get("CCFLAGS", [])[:])
