@@ -33,7 +33,7 @@
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
       "owner": "platformio",
-      "version": ">=1.60301.0,<1.80000.0",
+      "version": "~1.100301.0",
       "optionalVersions": [
         "~1.90201.0"
       ]
@@ -48,7 +48,7 @@
       "type": "framework",
       "optional": true,
       "owner": "platformio",
-      "version": "~2.20701.0"
+      "version": "~2.30400.0"
     },
     "tool-openocd": {
       "type": "debugger",
