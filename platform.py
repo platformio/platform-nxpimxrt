@@ -13,6 +13,8 @@
 # limitations under the License.
 
 import sys
+import os
+import subprocess
 
 from platformio.public import PlatformBase
 
@@ -60,6 +62,24 @@ class NxpimxrtPlatform(PlatformBase):
             del self.packages[jlink_pkgname]
 
         return super().configure_default_packages(variables, targets)
+
+    def install_package(self, name, *args, **kwargs):
+        pkg = super().install_package(name, *args, **kwargs)
+        if name != "framework-zephyr":
+            return pkg
+
+        if not os.path.isfile(os.path.join(pkg.path, "_pio", "state.json")):
+            self.pm.log.info("Installing Zephyr project dependencies...")
+            try:
+                subprocess.run([
+                    os.path.normpath(sys.executable),
+                    os.path.join(pkg.path, "scripts", "platformio", "install-deps.py"),
+                    "--platform", self.name
+                ])
+            except subprocess.CalledProcessError:
+                self.pm.log.info("Failed to install Zephyr dependencies!")
+
+        return pkg
 
     def get_boards(self, id_=None):
         result = super().get_boards(id_)
