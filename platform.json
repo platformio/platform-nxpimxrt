@@ -18,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/platformio/platform-nxpimxrt.git"
   },
-  "version": "5.2.0",
+  "version": "5.3.0",
   "frameworks": {
     "mbed": {
       "package": "framework-mbed",
