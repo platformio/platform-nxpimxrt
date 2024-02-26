@@ -48,7 +48,7 @@
       "type": "framework",
       "optional": true,
       "owner": "platformio",
-      "version": "~2.30500.0"
+      "version": "~2.30600.0"
     },
     "tool-openocd": {
       "type": "debugger",
