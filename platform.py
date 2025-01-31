@@ -17,6 +17,7 @@ import os
 import subprocess
 
 from platformio.public import PlatformBase
+from platformio.project.helpers import get_project_dir
 
 
 IS_WINDOWS = sys.platform.startswith("win")
