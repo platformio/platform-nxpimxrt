@@ -68,16 +68,26 @@ class NxpimxrtPlatform(PlatformBase):
         if name != "framework-zephyr":
             return pkg
 
-        if not os.path.isfile(os.path.join(pkg.path, "_pio", "state.json")):
-            self.pm.log.info("Installing Zephyr project dependencies...")
-            try:
-                subprocess.run([
-                    os.path.normpath(sys.executable),
-                    os.path.join(pkg.path, "scripts", "platformio", "install-deps.py"),
-                    "--platform", self.name
-                ])
-            except subprocess.CalledProcessError:
-                self.pm.log.info("Failed to install Zephyr dependencies!")
+        prj_west_manifest = os.path.join(get_project_dir(), "west.yml")
+        try:
+            (
+                subprocess.run(
+                    [
+                        os.path.normpath(sys.executable),
+                        os.path.join(
+                            pkg.path, "scripts", "platformio", "install-deps.py"
+                        ),
+                        "--platform",
+                        self.name,
+                    ] + (
+                        ["--manifest", prj_west_manifest]
+                        if os.path.isfile(prj_west_manifest)
+                        else []
+                    )
+                )
+            )
+        except subprocess.CalledProcessError:
+            self.pm.log.info("Failed to install Zephyr dependencies!")
 
         return pkg
 
