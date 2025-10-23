@@ -18,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/platformio/platform-nxpimxrt.git"
   },
-  "version": "7.2.0",
+  "version": "7.3.0",
   "frameworks": {
     "mbed": {
       "package": "framework-mbed",
@@ -33,7 +33,7 @@
     "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
       "owner": "platformio",
-      "version": "~1.100301.0",
+      "version": "~1.120301.0",
       "optionalVersions": [
         "~1.90201.0"
       ]
@@ -48,7 +48,7 @@
       "type": "framework",
       "optional": true,
       "owner": "platformio",
-      "version": "~3.40200.0"
+      "version": "~3.40201.0"
     },
     "tool-openocd": {
       "type": "debugger",
