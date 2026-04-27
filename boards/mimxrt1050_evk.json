@@ -2,7 +2,10 @@
   "build": {
     "cpu": "cortex-m7",
     "f_cpu": "600000000L",
-    "mcu": "mimxrt1052dvl6b"
+    "mcu": "mimxrt1052dvl6b",
+    "zephyr": {
+       "variant": "mimxrt1050_evk//qspi"
+    }
   },
   "debug": {
     "jlink_device": "MIMXRT1052DVL6B",
