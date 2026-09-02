@@ -158,6 +158,9 @@ class NxpimxrtPlatform(PlatformBase):
             elif link == "jlink":
                 assert debug.get("jlink_device"), (
                     "Missed J-Link Device ID for %s" % board.id)
+
+                jlink_script_path = debug.get("jlink_script_path")
+
                 debug["tools"][link] = {
                     "server": {
                         "package": "tool-jlink",
@@ -166,7 +169,8 @@ class NxpimxrtPlatform(PlatformBase):
                             "-if", "SWD",
                             "-select", "USB",
                             "-device", debug.get("jlink_device"),
-                            "-port", "2331"
+                            "-port", "2331",
+                            *(["-jlinkscriptfile", f"{get_project_dir()}/{jlink_script_path}"] if jlink_script_path else [])
                         ],
                         "executable": ("JLinkGDBServerCL.exe"
                                        if IS_WINDOWS else
